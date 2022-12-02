@@ -1,9 +1,6 @@
-let list = [''];
-let i = 0;
-const input = document.getElementById('input');
-const del = document.getElementById('del');
-const warn = document.getElementById('warn');
-const todoList = document.getElementById('ulist');
+const textBox = document.getElementById('input');
+const error = document.getElementById('error');
+const todoList = document.getElementById('listParent');
 let handleTodo = () => {
   if (input.value.length < 2 || input.value == ``) {
     warn.textContent = `please write what you want to do`;
