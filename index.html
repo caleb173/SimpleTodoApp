@@ -12,14 +12,11 @@
 <body>
   <div class="container">
     <h3>Easy TODO anywhere</h3>
-    <p id="warn"></p>
-    <ol id="ulist">
+    <ol id=listParent>
     </ol>
-
-    <input type="text" placeholder="what you want to do" id="input">
-    <div class="flexBtn">
-      <input type="button" id="add" value="Add">
-      <input type="button" id="del" value="Delete">
+    <div class=flex>
+      <input id=input placeholder="what you wanna do?">
+      <input type=button class=add value="Add" onclick=addTodo()>
     </div>
   </div>
   <script src="todo.js"></script>
