@@ -9,18 +9,16 @@
   <title>simple todo app</title>
 </head>
 
-<body>
-  <div class="container">
-    <h3>Easy TODO anywhere</h3>
-    <p id="warn"></p>
-    <ol id="ulist">
+<body class='main full no-space'>
+  <div class="pad large">
+    <h3 class='pad large center white'>Easy TODO anywhere</h3>
+    <ol id=listParent class=full>
     </ol>
-
-    <input type="text" placeholder="what you want to do" id="input">
-    <div class="flexBtn">
-      <input type="button" id="add" value="Add">
-      <input type="button" id="del" value="Delete">
+    <div class=flex>
+      <input id=input placeholder="what you wanna do?" class='pad large'>
+      <input type=button class='add sub white' value="Add" onclick=addTodo()>
     </div>
+<span id=error class='pad center'><span/>
   </div>
   <script src="todo.js"></script>
 </body>
