@@ -1,36 +1,27 @@
 const textBox = document.getElementById('input');
 const error = document.getElementById('error');
 const todoList = document.getElementById('listParent');
-let handleTodo = () => {
-  if (input.value.length < 2 || input.value == ``) {
-    warn.textContent = `please write what you want to do`;
-    return
-  }
-  i++;
-  let li = document.createElement('li');
-  list.push(input.value);
-  //reset the value in the textbox
-  input.value = '';
- /* list.forEach((item) => {
-   console.log(`${list[list.indexOf(item)]}` );
-    li.appendChild(document.createTextNode(`${list[list.indexOf(item)]}`));
-  }); */
-  // console.log(`${list} and i = ${i}`);
-
-   li.appendChild(document.createTextNode(list[i]));
-   todoList.appendChild(li);
-}
-
-let addBtn = document.getElementById('add');
-['click', 'keypress'].forEach(
-  (event) => {
-    addBtn.addEventListener(event, handleTodo);
-  }
-);
-del.addEventListener('click', () => {
-  list.pop();
-  i--;
-  todoList.children[i].remove();
-  console.log(`${list} and i = ${i}`);
+//logic to create todo
+let createList = (text) => {
+  let list = document.createElement('li');
+  let todo = document.createTextNode(text);
+  let doneBtn = document.createElement('button');
+  let done = document.createTextNode('done');
+  doneBtn.appendChild(done);
+  list.appendChild(todo);
+  list.appendChild(doneBtn);
+  todoList.appendChild(list);
+  doneBtn.addEventListener('click',
+ function() { 
+this.parentElement.style.display = 'none' 
 });
-console.log(i);
+  }
+//function to create todo
+function addTodo(){
+//ensure input is not empty
+textBox.value == '' ? error.innerText = 'empty todo'
+
+createList(`${textBox.value}`);
+//reset input
+textBox.value = ''
+}
